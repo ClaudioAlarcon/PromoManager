@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  
+  constructor() { }
+  
+  ngOnInit(): void {
+  }
 
+  logo = "</>";
 }
