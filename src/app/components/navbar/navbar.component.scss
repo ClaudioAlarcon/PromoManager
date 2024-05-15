@@ -3,9 +3,23 @@
     position: fixed;
     margin: 0;
     width: 100%;
-    overflow: hidden !important;
+    overflow: visible !important;
 }
 
 .nav-item{
     padding-left: 5em;
+}
+
+.btn-circle {
+    background-color: #808080; 
+    border-color: #808080;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
