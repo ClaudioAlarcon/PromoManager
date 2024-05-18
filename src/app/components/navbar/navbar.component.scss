@@ -1,25 +1,124 @@
-.navbar{
-    z-index: 1;
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex: 1;
+    margin-top: 60px;
+  }
+
+  .navbar {
+    padding: 20px;
+    text-align: center;
     position: fixed;
-    margin: 0;
+    top: 0;
     width: 100%;
-    overflow: visible !important;
+    z-index: 9999;
+
+    &.light-theme {
+        background-color: #f8f9fa;
+        color: black;
+    }
+
+    &.dark-theme {
+        background-color: rgba(51, 51, 51, 1);
+        color: white;
+    }
 }
 
-.nav-item{
-    padding-left: 5em;
+.navbar-nav {
+    margin-left: auto;
+
+    .dark-theme & {
+        margin-left: auto;
+    }
 }
 
-.btn-circle {
-    background-color: #808080; 
-    border-color: #808080;
-    color: white;
+.nav-item {
+    margin-left: 15px;
+    .dark-theme & {
+        margin-left: 15px;
+    }
+}
+
+.dropdown {
+    margin-left: 15px;
+    .dark-theme & {
+        margin-left: 15px;
+    }
+}
+
+.nav-link{
+    .dark-theme & {
+        color: white;
+    }
+}
+
+.navbar-brand{
+    .dark-theme & {
+        color: white;
+    }
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    .dark-theme & {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+    }
+}
+
+.navbar-icons .btn-circle {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #6c757d;
+    }
+
+    &[class*="dark"] {
+        background-color: #292929;
+        border-color: #292929;
+    }
+
+    &[class*="dark"] i {
+        color: white !important;
+    }
+
+    &[class*="light"] {
+        background-color: #87CEFA;
+        border-color: #87CEFA;
+    }
+
+    &[class*="light"] i {
+        color: black !important;
+    }
+}
+
+#logo {
+    width: 2em; 
+    height: 2em;
+    animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(0deg);
+    }
+    0% {
+        transform: rotate(360deg);
+    }
 }

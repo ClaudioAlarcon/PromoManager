@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; // Ajusta la altura de la pantalla completa
+    height: 90vh; // Ajusta la altura de la pantalla completa
 }
 
 .about-container {
@@ -44,38 +44,4 @@
 
 .explore-button:hover {
     background-color: #0056b3;
-}
-
-.decagon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px; // Ajusta el tamaño del decágono según sea necesario
-    height: 80px; // Ajusta el tamaño del decágono según sea necesario
-    background-color: #007bff;
-    clip-path: polygon(50% 0, 85.36% 14.64%, 100% 50%, 85.36% 85.36%, 50% 100%, 14.64% 85.36%, 0% 50%, 14.64% 14.64%, 50% 0%, 85.36% 14.64%);
-    border-radius: 10px; // Ajusta el radio de los vértices
-    animation: float 5s infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-}
-
-.diamond-text {
-    font-size: 24px; // Ajusta el tamaño del texto según sea necesario
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }

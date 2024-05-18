@@ -1,10 +1,24 @@
-.footer{
-    position: fixed;
-    background-color: #212529;
-    bottom:0;
-    margin: 0;
-    width:100%;
-    height:30px;
+.footer {
+    padding: 20px;
     text-align: center;
-    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.light-theme {
+        background-color: #f8f9fa; // Color de fondo claro
+        color: black; // Color del texto claro
+    }
+
+    &.dark-theme {
+        background-color: rgba(51, 51, 51, 0.8); // Color de fondo oscuro
+        color: white; // Color del texto oscuro
+    }
+}
+
+.createdBy {
+    font-size: 14px;
+    margin: 0;
 }

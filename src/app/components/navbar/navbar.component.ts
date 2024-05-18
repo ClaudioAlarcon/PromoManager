@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Loading3Component } from "../loading/loading3/loading3.component";
 
 @Component({
@@ -9,15 +9,25 @@ import { Loading3Component } from "../loading/loading3/loading3.component";
     imports: [Loading3Component]
 })
 export class NavbarComponent {
+  @Input() isLightTheme: boolean = false;
+  @Output() toggleThemeEvent = new EventEmitter<void>();
 
-  isLoggedIn: boolean = false;
   constructor() { }
-  
-  ngOnInit(): void {
-  }
 
-  logo = "</>";
-  
+  themeIcon = 'bi bi-sun';
+  isLoggedIn: boolean = false;
+
+  toggleTheme() {
+    this.toggleThemeEvent.emit();
+
+    if (this.themeIcon === 'bi bi-sun') {
+      this.themeIcon = 'bi bi-moon';
+      this.isLightTheme = false;
+    } else {
+      this.themeIcon = 'bi bi-sun';
+      this.isLightTheme = true;
+    }
+  }
 
   login(this: any) {
     this.isLoggedIn = true;

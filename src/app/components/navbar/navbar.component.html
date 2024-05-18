@@ -1,6 +1,7 @@
-<nav id="navbarContainer" class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav id="navbarContainer" class="navbar navbar-expand-lg" [class.dark-theme]="!isLightTheme" [class.light-theme]="isLightTheme">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">{{logo}}Promo Manager</a>
+        <object type="image/svg+xml" data="assets/img/PM.svg" id="logo"></object>
+        <a class="navbar-brand" href="#">PromoManager</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,43 +9,53 @@
             <ul class="navbar-nav ms-auto">
                 @if (!isLoggedIn) {
                     <li class="nav-item">
-                    <a class="nav-link" href="#Configuration">Information</a>
+                    <a class="nav-link" href="#start">About</a>
                 </li>
                 }
                 @if (!isLoggedIn) {
                     <li class="nav-item">
-                        <a class="nav-link" href="#Contact">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 }
                 @if (isLoggedIn) {
                     <li class="nav-item">
-                        <a class="nav-link" href="#Promotions">Promotions</a>
+                        <a class="nav-link" href="#promotions">Promotions</a>
                     </li>
                 }
                 @if (isLoggedIn) {
                     <li class="nav-item">
-                        <a class="nav-link" href="#Configuration">Configuration</a>
+                        <a class="nav-link" href="#configuration">Configuration</a>
                     </li>
                 }
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a href="#" class="btn btn-circle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person" style="font-size: 1.5rem; color: white;"></i>
-                        </a>
-                        <ul class="dropdown-menu p-4 dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                            <li>
-                                <div class="mb-3">
-                                    <input type="user" class="form-control" id="userTextBox" placeholder="user">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control" id="passwordTextBox" placeholder="Password">
-                                </div>
-                                <button type="submit" class="btn btn-primary" (click)='login()'>Login</button>
-                            </li>
-                        </ul>
-                    </div>
-                </li>                
             </ul>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="btn btn-circle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person"></i>
+            </a>
+            <ul class="dropdown-menu p-4 dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                <li>
+                    <h5 class="mb-3">Ingrese sus datos</h5>
+                    <div class="mb-3">
+                        <input type="user" class="form-control" id="userTextBox" placeholder="Usuario">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="passwordTextBox" placeholder="Contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)='login()'>Ingresar</button>
+                    <button type="button" class="btn btn-link">¿Olvidaste tu contraseña?</button>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-icons">
+            <button class="btn btn-circle">
+                <i class="bi bi-globe"></i>
+            </button>
+            <div class="navbar-icons">
+                <button class="btn btn-circle" (click)="toggleTheme()" [class.light-theme]="isLightTheme" [class.dark-theme]="!isLightTheme">
+                    <i class="bi" [className]="themeIcon"></i>
+                </button>
+            </div>
         </div>
     </div>
 </nav>
