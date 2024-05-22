@@ -1,5 +1,5 @@
 <router-outlet>
-  <app-navbar [isLightTheme]="isLightTheme"></app-navbar>
+  <app-navbar [isLightTheme]="isLightTheme"  (toggleThemeEvent)="toggleTheme()" [selectedLanguage] = "preSelectedLanguage"></app-navbar>
     <div class="container" id="start">
       <div class="content">
         <app-about></app-about>

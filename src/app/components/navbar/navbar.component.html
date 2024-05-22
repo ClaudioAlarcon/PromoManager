@@ -9,53 +9,60 @@
             <ul class="navbar-nav ms-auto">
                 @if (!isLoggedIn) {
                     <li class="nav-item">
-                    <a class="nav-link" href="#start">About</a>
+                    <a class="nav-link" href="#start">{{ 'ABOUT' | translate }}</a>
                 </li>
                 }
                 @if (!isLoggedIn) {
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">{{ 'CONTACT' | translate }}</a>
                     </li>
                 }
                 @if (isLoggedIn) {
                     <li class="nav-item">
-                        <a class="nav-link" href="#promotions">Promotions</a>
+                        <a class="nav-link" href="#promotions">{{ 'PROMOTIONS' | translate }}</a>
                     </li>
                 }
                 @if (isLoggedIn) {
                     <li class="nav-item">
-                        <a class="nav-link" href="#configuration">Configuration</a>
+                        <a class="nav-link" href="#configuration">{{ 'CONFIGURATIONS' | translate }}</a>
                     </li>
                 }
             </ul>
         </div>
         <div class="dropdown">
             <a href="#" class="btn btn-circle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-person nav-link"></i>
             </a>
-            <ul class="dropdown-menu p-4 dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+            <ul class="dropdown-menu p-4 dropdown-menu-end custom-dropdown-menu login-menu" aria-labelledby="dropdownMenuLink">
                 <li>
-                    <h5 class="mb-3">Ingrese sus datos</h5>
+                    <h5 class="mb-3">{{ 'ENTER YOUR DATA' | translate }}</h5>
                     <div class="mb-3">
-                        <input type="user" class="form-control" id="userTextBox" placeholder="Usuario">
+                        <input type="user" class="form-control" id="userTextBox" placeholder="{{ 'USER' | translate }}">
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control" id="passwordTextBox" placeholder="Contraseña">
+                        <input type="password" class="form-control" id="passwordTextBox" placeholder="{{ 'PASSWORD' | translate }}">
                     </div>
-                    <button type="submit" class="btn btn-primary" (click)='login()'>Ingresar</button>
-                    <button type="button" class="btn btn-link">¿Olvidaste tu contraseña?</button>
+                    <div class="d-flex flex-column align-items-center">
+                        <button type="submit" class="btn btn-primary mb-2" (click)='login()'>{{ 'LOGIN' | translate }}</button>
+                        <button type="button" class="btn btn-link">{{ 'FORGOT PASSWORD' | translate }}</button>
+                    </div>
                 </li>
             </ul>
         </div>
         <div class="navbar-icons">
-            <button class="btn btn-circle">
-                <i class="bi bi-globe"></i>
-            </button>
-            <div class="navbar-icons">
-                <button class="btn btn-circle" (click)="toggleTheme()" [class.light-theme]="isLightTheme" [class.dark-theme]="!isLightTheme">
-                    <i class="bi" [className]="themeIcon"></i>
-                </button>
+            <div class="dropdown">
+                <a href="#" class="btn btn-circle" role="button" id="dropdownMenuLinkLang" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-globe nav-link"></i> <span class="language-minitext">{{ selectedLanguage }}</span>
+                </a>
+                <ul class="dropdown-menu p-4 dropdown-menu-end custom-dropdown-menu language-menu" aria-labelledby="dropdownMenuLinkLang">
+                  <li (click)="setLanguage('es')" [class.selected]="selectedLanguage === 'es'">Español <span *ngIf="selectedLanguage === 'es'">&#10003;</span></li>
+                  <li (click)="setLanguage('en')" [class.selected]="selectedLanguage === 'en'">English <span *ngIf="selectedLanguage === 'en'">&#10003;</span></li>
+                  <li (click)="setLanguage('pt')" [class.selected]="selectedLanguage === 'pt'">Português <span *ngIf="selectedLanguage === 'pt'">&#10003;</span></li>
+                </ul>
             </div>
+            <button class="btn btn-circle nav-link" (click)="toggleTheme()" [class.light-theme]="isLightTheme" [class.dark-theme]="!isLightTheme">
+                <i class="bi" [className]="themeIcon"></i>
+            </button>
         </div>
     </div>
 </nav>

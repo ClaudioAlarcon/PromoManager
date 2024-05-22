@@ -1,5 +1,5 @@
-<footer class="footer" [className]="{'light-theme': isLightTheme, 'dark-theme': !isLightTheme}">
+<footer class="footer" [class.dark-theme]="!isLightTheme" [class.light-theme]="isLightTheme">
     <div class="copyright">
-        <h6 class="createdBy">Created by Claudio Alarcon Carvajal</h6>
+        <h6 class="createdBy">{{ 'CREATED BY' | translate }} Claudio</h6>
     </div>
 </footer>

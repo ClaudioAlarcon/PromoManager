@@ -8,13 +8,13 @@
     z-index: 9999;
 
     &.light-theme {
-        background-color: #f8f9fa; // Color de fondo claro
-        color: black; // Color del texto claro
+        background-color: #8efdd3;
+        color: black;
     }
 
     &.dark-theme {
-        background-color: rgba(51, 51, 51, 0.8); // Color de fondo oscuro
-        color: white; // Color del texto oscuro
+        background-color: rgb(33, 39, 28); 
+        color: white;
     }
 }
 

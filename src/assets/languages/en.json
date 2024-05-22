@@ -1,0 +1,21 @@
+{
+    "ABOUT": "About",
+    "CONTACT": "Contact",
+    "PROMOTIONS": "Promotions",
+    "CONFIGURATIONS" : "Configurations",
+    "LOGIN" : "Log in",
+    "FORGOT PASSWORD" : "Forgot password?",
+    "USER" : "User",
+    "PASSWORD" : "Password",
+    "ENTER YOUR DATA" : "Enter your data",
+    "WELCOME TITLE" : "Welcome to PromoManager!",
+    "WELCOME SUBTITLE" : "Your ultimate destination for retail promotions.",
+    "CONTACT US" : "Contact us",
+    "CREATED BY" : "Created by",
+    "CONTACT_HEADER": "Contact us",
+    "CONTACT_SUBHEADER": "Have any questions or inquiries? We're here to help!",
+    "CONTACT_NAME": "Name:",
+    "CONTACT_EMAIL": "Email:",
+    "CONTACT_MESSAGE": "Message:",
+    "CONTACT_SEND_BUTTON": "Send"
+}

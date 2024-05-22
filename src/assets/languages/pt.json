@@ -1,0 +1,21 @@
+{
+    "ABOUT": "Sobre",
+    "CONTACT": "Contato",
+    "PROMOTIONS": "Promoções",
+    "CONFIGURATIONS": "Configurações",
+    "LOGIN": "Entrar",
+    "FORGOT PASSWORD": "Esqueceu sua senha?",
+    "USER": "Usuário",
+    "PASSWORD": "Senha",
+    "ENTER YOUR DATA": "Digite seus dados",
+    "WELCOME TITLE": "Bem-vindo ao PromoManager!",
+    "WELCOME SUBTITLE": "Seu destino final para promoções de varejo.",
+    "CONTACT US": "Contate-nos",
+    "CREATED BY": "Criado por",
+    "CONTACT_HEADER": "Contate-nos",
+    "CONTACT_SUBHEADER": "Tem alguma pergunta ou consulta? Estamos aqui para ajudar!",
+    "CONTACT_NAME": "Nome:",
+    "CONTACT_EMAIL": "Email:",
+    "CONTACT_MESSAGE": "Mensagem:",
+    "CONTACT_SEND_BUTTON": "Enviar"
+}
